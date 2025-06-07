@@ -4,6 +4,8 @@
 ### Requirements
 ```
 sudo apt install npm
+```
+```
 npm install --save three
 npm install --save-dev vite
 ```
