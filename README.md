@@ -11,7 +11,7 @@ npm install --save-dev vite
 ```
 To test prebuilt code:
 ```
-npm vite
+npx vite
 ```
 
 ### Build
