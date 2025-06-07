@@ -36,3 +36,4 @@ rsync dist/* <remote>: -a
 rsync dist/* oling_olimn@ssh.nyc1.nearlyfreespeech.net: -a # in this case
 <enter password>
 ```
+_et voila...._
