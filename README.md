@@ -26,11 +26,11 @@ npx serve dist
 ```
 
 ## Syncing
-First build:
+First, build:
 ```
 npx vite build
 ```
-Then sync with the remote host:
+then sync with the remote host:
 ```
 rsync dist/* <remote>: -a
 rsync dist/* oling_olimn@ssh.nyc1.nearlyfreespeech.net: -a # in this case
