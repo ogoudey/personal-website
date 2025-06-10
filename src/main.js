@@ -1,6 +1,8 @@
-import model_path from './assets/model.glb'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import * as THREE from 'three';
+
+
+import model_path from './assets/counter.glb'
  
 
 const canvas = document.querySelector('#c');
