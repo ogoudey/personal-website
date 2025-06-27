@@ -1,10 +1,8 @@
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import * as THREE from 'three';
 
-
-import model_path from './assets/counter.glb'
+import model_path from './assets/model.glb'
  
-
 const canvas = document.querySelector('#c');
 const renderer = new THREE.WebGLRenderer({antialias: true, canvas}); // This calls what we pass requestAnimationFrame
 const fov = 1;
@@ -137,6 +135,14 @@ function clearPickPosition() {
   pickPosition.y = -100000;
 }
 
+const formBtn = document.getElementById('about-form');
+
+function handleForm(event) {
+  console.log('Submitting!', event);
+    
+}
+
+formBtn.addEventListener('click', handleForm);
 
 window.addEventListener('click', choose);
 window.addEventListener('mousemove', setPickPosition);

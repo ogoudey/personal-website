@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.png" type="image/png">
     <title>Olin's Personal Website</title>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -73,6 +75,20 @@
             grid-column: span 2;
             place-items: baseline;
         }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #222;
+        }
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #444;
+        }
         footer {
             text-align: center;
             padding: 10px;
@@ -97,12 +113,16 @@
         <h1>Hello and Welcome!</h1>
         <p>Get to know me, explore my work, and feel free to reach out!</p>
     </header>
-
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="blog.html">Blog</a>
+    </nav>
     <div class="content">
         <h2>About Me</h2>
         <div class="grid">
-            <div class="grid-item basic">I do consulting as a web developer.</div>
-            <div class="grid-item raw">These are some examples -></div>
+            <div class="grid-item basic"><form>Here:<input></input><button id="about-form" type="submit">Submit</button></form></div>
+            <div class="grid-item raw">I do consulting as a web developer. These are some examples -></div>
             <div class="grid-item basic"><iframe src="https://www.cagoudey.com" allowfullscreen>Your browser doesn’t support iframes.</iframe></div>
             <div class="grid-item basic"><iframe src="https://www.tendocean.com" allowfullscreen>Your browser doesn’t support iframes.</iframe></div>
             <div class="grid-item basic wide">I also go to Tufts University as a grad student. Here, I am studying computer science with an emphasis on robotics.</div>
