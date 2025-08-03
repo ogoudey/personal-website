@@ -1,5 +1,5 @@
 export default {
-  assetsInclude: ['**/*.glb'],
+  assetsInclude: ['**/*.glb', '**/*.png'],
 };
 
 
