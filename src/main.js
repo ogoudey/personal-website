@@ -135,15 +135,6 @@ function clearPickPosition() {
   pickPosition.y = -100000;
 }
 
-const formBtn = document.getElementById('about-form');
-
-function handleForm(event) {
-  console.log('Submitting!', event);
-    
-}
-
-formBtn.addEventListener('click', handleForm);
-
 window.addEventListener('click', choose);
 window.addEventListener('mousemove', setPickPosition);
 window.addEventListener('mouseout', clearPickPosition);
