@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "@humeai/voice": "^0.1.10",
     "@openai/agents": "^0.0.10",
     "@openai/agents-realtime": "^0.0.10",
+    "hume": "^0.12.1",
     "three": "^0.177.0",
     "zod": "^3.25.67"
   },
