@@ -145,37 +145,6 @@ function handleForm(event) {
   document.getElementById("about-form").innerText = "Submit Again!" 
 }
 
-// Hume
-import { HumeClient } from "hume"
-
-const hume = new HumeClient({
-  apiKey: 'jfg8l06nZRPhSivBQAk1wl1IGwc0EnxAUaPq3hvmPHoV0t0E8H2o9lAQZCt2sTOm'
-})
-
-async function generate() {
-  const response = await hume.tts.synthesizeJson({
-    utterances: [
-      {
-        text: "Hello!",
-      },
-    ],
-    numGenerations: 1,
-  });
-
-  console.log(response);
-  return response.generations[0].audio;
-}
-
-function playAudio(snd) {
-  const byteArray = Uint8Array.from(atob(snd), c => c.charCodeAt(0));
-  const blob = new Blob([byteArray], { type: "audio/wav" });
-  const url = URL.createObjectURL(blob);
-  const audio = new Audio(url);
-  audio.play();
-}
-
-
-// end Hume
 formBtn.addEventListener('click', handleForm);
 
 window.addEventListener('click', choose);
