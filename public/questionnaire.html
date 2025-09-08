@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Policy Evaluation Form</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-top: 1em;
+      font-weight: bold;
+    }
+    .namefield {
+      width: 100%;
+      height: 1.5rem;
+      margin-top: 0.5em;
+    }
+    textarea {
+      width: 100%;
+      height: 80px;
+      margin-top: 0.5em;
+    }
+    button {
+      margin-top: 1.5em;
+      padding: 0.5em 1em;
+      font-size: 1rem;
+    }
+    legend {
+        font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Policy Evaluation Rubric</h1>
+  <form id="policyForm">
+    <fieldset>
+      <legend>0. Introduction</legend>
+      <label>Policy short name:
+        <textarea class="namefield" name="name"></textarea>
+      </label>
+      <label>Policy description:
+        <textarea name="q0a"></textarea>
+      </label>
+      <label>Training environment:
+        <textarea name="q0b"></textarea>
+      </label>
+      <label>Target environment:
+        <textarea name="q0c"></textarea>
+      </label>
+
+    </fieldset>
+    
+    <fieldset>
+      <legend>1. Realism of the experiment</legend>
+      <p>Assuming a target real environment, how statistically common or realistic is the training...</p>
+      <label>a. environment?
+        <textarea name="q1a"></textarea>
+      </label>
+      <label>b. agent?
+        <textarea name="q1b"></textarea>
+      </label>
+      <label>c. target object?
+        <textarea name="q1c"></textarea>
+      </label>
+      <label>d. Does the policy generalize?
+        <textarea name="q1d"></textarea>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Applicability to training environment</legend>
+      <label>a. Given an assumption about the training environment that it is real, how do the initial conditions of the policy align with a real runtime of one (assuming there is such a runtime)?
+        <textarea name="q2a"></textarea>
+      </label>
+      <label>b. How about the post-conditions?
+        <textarea name="q2b"></textarea>
+      </label>
+      <label>c. Imagined runtime:
+        <textarea name="q2c"></textarea>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Applicability to target environment</legend>
+      <label>a. Assuming the target environment, how do the initial conditions of the policy align with a real runtime of one?
+        <textarea name="q3a"></textarea>
+      </label>
+      <label>b. How about the post-conditions?
+        <textarea name="q3b"></textarea>
+      </label>
+      <label>c. Imagined runtime:
+        <textarea name="q3c"></textarea>
+      </label>
+    </fieldset>
+
+    <button type="button" onclick="downloadResponses()">Save Responses</button>
+  </form>
+
+  <p id="status" style="margin-top: 1em; color: green;"></p>
+
+  <script>
+    function downloadResponses() {
+        const form = document.getElementById("policyForm");
+        const responses = {
+            q0a: form.q0a.value,
+            q0b: form.q0b.value,
+            q0c: form.q0c.value,
+            q1a: form.q1a.value,
+            q1b: form.q1b.value,
+            q1c: form.q1c.value,
+            q1d: form.q1d.value,
+            q2a: form.q2a.value,
+            q2b: form.q2b.value,
+            q2c: form.q2c.value,
+            q3a: form.q3a.value,
+            q3b: form.q3b.value,
+            q3c: form.q3c.value,
+        };
+
+        const blob = new Blob([JSON.stringify(responses, null, 4)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = form.name.value + "_evaluation.json";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        document.getElementById("status").innerText = "Responses downloaded. Reload the page to clear fields.";
+    }
+  </script>
+</body>
+</html>
