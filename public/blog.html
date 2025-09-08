@@ -55,13 +55,15 @@
         }
         h3 {
             padding-top: 5%;
-            text-align: center;
+            text-align: left;
         }
         h4 {
+            text-align: center;
             font-size: 20pt;
         }
         h5 {
             font-size: 16pt;
+            margin-bottom: 0px;
         }
     </style>
 </head>
@@ -82,14 +84,17 @@
         <div class="portfolio-item">
             <h3>August 3rd, 2025</h3>
             <h4>Making LeRobot SO-101</h4>
+            <p>This blog post is a casual presentation of some work I've done with LeRobot's SO-101 robot (<a href="https://huggingface.co/docs/lerobot/en/so101">link 🤗</a>). <i>Anyone can do this</i> (not that, at this stage, it's very useful) - it costs ~$150 (depending on tariffs) and if you don't want to make it yourself, I offer free 3D printing, assembly, and model-training services, as well as all model weights that I've trained.</p>
+            <h5>Brains in a Body</h5>
+            <p>All the brains body are uploaded to the cloud, and can be downloaded and installed pretty easily. Set up the conda environment and clone the <a href="https://github.com/ogoudey/lerobot.git">repository</a>. Then run the brains with <b>python3 custom_brains/test.py</b>. These brains are instances of a VLA (vision-language-action) model (details on Github). The "user" will be prompted to give a natural language (English) instruction and the robot <i>do what it can</i>.</p>
             <h5>Assembly</h5>
             <p>Here are most of the parts to print:</p>
             <img src="parts-to-print.png"></img>
             <p>Printing and assembly is pretty straightforward. So, a little while later:</p>
             <img src="assembled.png"></img>
-            <h5>Putting Brains to Body</h5>
-            <p>All the brains to this body are uploaded to the cloud, and can be downloaded and installed pretty easily. Set up the conda environment and clone <a href="https://github.com/ogoudey/lerobot.git">the repository</a>. Then run the brains with <b>python3 custom_brains/test.py</b>. The brains are not much yet, unfortunately, only keyboard teleoperation.</p>
-            <p>Stay tuned for updates on the brain.</p>
+            <p>And yeah. (From my policy evaluation:)</p>
+            <p><i>A more "respectful" approach is to give the robot a life. Calculate the price/day, give it a station. Give it a "sleep schedule". Upload new versions in "sleep". (Give it ego-centric cameras.) Give it pals.</i></p>
+            <p>On the other hand, my emphasis is actually how to make this useful, how do put the robot to work. So far it's useless.</p>
         </div>
         
         <div class="portfolio-item">
